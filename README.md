@@ -8,7 +8,7 @@ Having fun with regex. Is it possible? I think so.
 ### Installation
 
 ```
-gem install regularity
+gem install regexify
 ```
 
 
