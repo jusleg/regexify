@@ -2,7 +2,7 @@
 
 [View docs](http://www.rubydoc.info/gems/regexify/0.0.1/Regexify)
 
-Having fun with regex. It is possible? I think so.
+Having fun with regex. Is it possible? I think so.
 
 Regexify provides a simple interface to write regex in ruby
 
