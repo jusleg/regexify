@@ -4,6 +4,16 @@
 
 Having fun with regex. Is it possible? I think so.
 
+
+### Installation
+
+```
+gem install regularity
+```
+
+
+### Usage
+
 Regexify provides a simple interface to write regex in ruby
 
 Four methods can be used to create the regex:
@@ -43,6 +53,6 @@ Regexify.new
 
 This project was heavily inspired by [regularity](https://github.com/andrewberls/regularity)
 
-## LICENSE
+### LICENSE
 
 This gem is MIT licensed, please see LICENSE for more information.
