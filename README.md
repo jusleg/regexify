@@ -50,7 +50,11 @@ Regexify.new
 
  => /^(hello|hola){2,3},(world){2}!{1,}$/ 
  
-Regexify.new.begin_with(:uppercase, exactly: 3).then(:number, '-', range: [2,10]).not(:alphanumeric, exactly:1).end_with('!').regex
+Regexify.new
+  .begin_with(:uppercase, exactly: 3)
+  .then(:number, '-', range: [2,10])
+  .not(:alphanumeric, exactly:1)
+  .end_with('!').regex
 
  => /^[A-Z]{3}[0-9-]{2,10}[^a-zA-Z0-9]!$/
 ```
