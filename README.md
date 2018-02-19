@@ -48,7 +48,11 @@ Regexify.new
   .then('world', exactly: 2)
   .end_with('!', range: [1,]).regex
 
- => /^(hello|hola){2,3},(world){2}!{1,}$/  
+ => /^(hello|hola){2,3},(world){2}!{1,}$/ 
+ 
+Regexify.new.begin_with(:uppercase, exactly: 3).then(:number, '-', range: [2,10]).not(:alphanumeric, exactly:1).end_with('!').regex
+
+ => /^[A-Z]{3}[0-9-]{2,10}[^a-zA-Z0-9]!$/
 ```
 
 This project was heavily inspired by [regularity](https://github.com/andrewberls/regularity)
