@@ -1,9 +1,13 @@
 # Where the regex magic happens
 class Regexify
 
+  public
+  
   # Class to raise errors
   class Error < StandardError; end
 
+  private
+  
   # a small list of popular regex tokens that are available with regexify
   PATTERNS = {
     number: '0-9',
@@ -20,9 +24,19 @@ class Regexify
   # chars that needs to be escaped in a regex
   ESCAPED_CHARS = %w(* . ? ^ + $ | ( ) [ ] { } \\)
 
+  protected
+  
+  # instance variables
+  @str = nil
+  @patterns = nil
+  @complete = nil
+    
+  public
+  
   # default constructor
   def initialize
     @str = ""
+    @patterns = PATTERNS
     @complete = false
   end
 
@@ -99,8 +113,8 @@ class Regexify
   def extract_regex(arg)
     regex_str = ""
     if arg.is_a? Symbol
-      raise Regexify::Error.new('symbol not defined in patterns') unless PATTERNS.key?(arg)
-      PATTERNS[arg]
+      raise Regexify::Error.new('symbol not defined in patterns') unless @patterns.key?(arg)
+      @patterns[arg]
     else
       escape(arg)
     end
@@ -142,4 +156,5 @@ class Regexify
     end
     return false
   end
+  
 end
