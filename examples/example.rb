@@ -30,10 +30,7 @@ class RegexifyWithOptions < Regexify
 		
 		def initialize(opt = nil)
 			super()
-			raise Regexify::Error.new("Illegal regex modifier string") \
-  							unless opt.kind_of?(NilClass) || \
-  								   (opt.kind_of?(String) && opt.match?(/[ixm]/))
-  			@options = opt
+  			self.options = opt
 		end
 		
 		# Converts Regexify object to Regexp
