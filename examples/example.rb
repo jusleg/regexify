@@ -148,10 +148,10 @@ class RegexifyANSI < Regexify
 #
 			@patterns[:number] = '[[:digit:]]'
 			@patterns[:uppercase] = '[[:upper:]]'
-    		@patterns[:lowercase] = '[[:lower:]]'
-    		@patterns[:letter] = '[[:alpha:]]'
-    		@patterns[:alphanumeric] = '[[:alnum:]]'
-    		@patterns[:whitespace] = '[[:space:]]'
+    			@patterns[:lowercase] = '[[:lower:]]'
+    			@patterns[:letter] = '[[:alpha:]]'
+    			@patterns[:alphanumeric] = '[[:alnum:]]'
+    			@patterns[:whitespace] = '[[:space:]]'
 
 # new patterns
 #
