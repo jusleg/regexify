@@ -17,7 +17,16 @@ class RegexifyWithOptions < Regexify
 	
 	public
 	
-		attr_accessor :options
+		def options
+			@options
+		end
+		
+		def options=(opt)
+			raise Regexify::Error.new("Illegal regex modifier string") \
+  							unless opt.kind_of?(NilClass) || \
+  								   (opt.kind_of?(String) && opt.match?(/[ixm]/))
+  			@options = opt
+  		end
 		
 		def initialize(opt = nil)
 			super()
