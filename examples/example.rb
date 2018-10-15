@@ -38,16 +38,9 @@ class RegexifyWithOptions < Regexify
   			opts = 0
   			unless @options.nil?
   				@options = squeeze(@options)
-  				@options.each_char { |c|
-  					case c
-  					when 'i'
-  					  opts |= Regexp::IGNORECASE
-  					when 'x'
-  					  opts |= Regexp::EXTENDED
-  					when 'm'
-  					  opts |= Regexp::MULTILINE
-  					end
-  				}
+  				opts |= Regexp::IGNORECASE if @options.match?(/i/)
+				opts |= Regexp::EXTENDED if @options.match?(/x/)
+				opts |= Regexp::MULTILINE if @options.match?(/m/)
   			end
   			Regexp.new(@str, opts)
   		end
@@ -56,8 +49,8 @@ class RegexifyWithOptions < Regexify
 	
 		def squeeze(str)
 			uniqs = ''
-    		str.sub(/\s+/,'').each_char { |s| uniqs += s if !uniqs.include?(s) }
-    		return uniqs.downcase
+    			str.sub(/\s+/,'').each_char { |s| uniqs += s if !uniqs.include?(s) }
+    			return uniqs.downcase
 		end
 end
 
